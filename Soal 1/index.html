@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Soal 1 - Test Interview Jumpa - Adzi Bilal</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>Test Kalimat Pangram</h3>
+        <input id="txt-input" type="text">
+        <p id="txt-result"></p>
+        <button onclick="isPangramCheck()">Cek Kalimat</button>
+    </div>
+    <script>
+
+        function isPangramCheck(){
+            let str = document.getElementById("txt-input").value;
+
+            const isPangram = (str = '') => {
+                str = str.toLowerCase();
+                const { length } = str;
+                const alphabets = 'abcdefghijklmnopqrstuvwxyz';
+                const alphaArr = alphabets.split('');
+                    for(let i = 0; i < length; i++){
+                        const el = str[i];
+                        const index = alphaArr.indexOf(el);
+                        if(index !== -1){
+                            alphaArr.splice(index, 1);
+                        }
+                    }
+                    return !alphaArr.length;
+                };
+            
+            if(isPangram(str)){
+                document.getElementById("txt-result").innerHTML = "Kalimat ini adalah sebuah kalimat pangram. (true)";
+            }else{
+                document.getElementById("txt-result").innerHTML = "Kalimat ini bukan sebuah kalimat pangram. (false)";
+
+            }
+            // console.log(isPangram(str));
+        }
+    </script>
+</body>
+</html>

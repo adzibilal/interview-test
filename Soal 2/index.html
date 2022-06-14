@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Soal 2 - Test Interview Jumpa - Adzi Bilal</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .radio-input-box{
+            display: flex;
+            width: 650px;
+            flex-wrap: wrap;
+        }
+        .item-radio{
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+        .label-color{
+            padding: 5px 15px;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+        .black{
+            background-color: black;
+            color: white;
+        }
+        .brown{
+            background-color: brown;
+            color: white;
+        }
+        .red{
+            background-color: red;
+            color: white;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+            color: white;
+        }
+        .blue{
+            background-color: blue;
+            color: white;
+        }
+        .violet{
+            background-color: violet;
+        }
+        .grey{
+            background-color: gray;
+        }
+        .white{
+            background-color: white;
+            border: 1px solid #ddd;
+        }
+        .item-prt{
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>Kalkulator Resistor</h3>
+        <div class="item-prt">
+            <p>Warna 1</p>
+            <div class="radio-input-box">
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="">
+                    <div class="label-color black">Black</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="1">
+                    <div class="label-color brown">Brown</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="2">
+                    <div class="label-color red">Red</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="3">
+                    <div class="label-color orange">Orange</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="4">
+                    <div class="label-color yellow">Yellow</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="5">
+                    <div class="label-color green">Green</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="6">
+                    <div class="label-color blue">Blue</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="7">
+                    <div class="label-color violet">Violet</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="8">
+                    <div class="label-color grey">Grey</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_1" value="9">
+                    <div class="label-color white">white</div>
+                </div>
+            </div>
+        </div>
+        <div class="item-prt">
+            <p>Warna 2</p>
+            <div class="radio-input-box">
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="0">
+                    <div class="label-color black">Black</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="1">
+                    <div class="label-color brown">Brown</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="2">
+                    <div class="label-color red">Red</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="3">
+                    <div class="label-color orange">Orange</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="4">
+                    <div class="label-color yellow">Yellow</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="5">
+                    <div class="label-color green">Green</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="6">
+                    <div class="label-color blue">Blue</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="7">
+                    <div class="label-color violet">Violet</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="8">
+                    <div class="label-color grey">Grey</div>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" id="html" name="warna_2" value="9">
+                    <div class="label-color white">white</div>
+                </div>
+            </div>
+        </div>
+        <h2 id="nilai-resistor"></h2>
+        <button onclick="hitungResistor()">Hitung Resistor</button>
+    </div>
+    <script>
+
+        function hitungResistor(){
+            let warna1 = document.querySelector('input[name="warna_1"]:checked').value;
+            let warna2 = document.querySelector('input[name="warna_2"]:checked').value;
+
+            let result = warna1.concat(warna2);
+            document.getElementById("nilai-resistor").innerHTML = "Nilai Resistor :" + result;
+        }
+    </script>
+</body>
+</html>
